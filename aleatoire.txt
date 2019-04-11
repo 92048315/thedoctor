@@ -1,0 +1,29 @@
+void deplaceralea(int arg[],SDL_Rect *pos, int direction)
+{
+int i=0;
+while(i<24)
+{
+direction = LEFT ;
+i++;
+
+}
+if (i==23)
+{
+while(i>-1)
+{
+i--;
+direction=RIGHT;
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+}
