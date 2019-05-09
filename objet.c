@@ -231,6 +231,7 @@ coins1=NULL;
 
 
 
+
 SDL_Flip(screen);
 while (SDL_PollEvent(&event))
 {
@@ -246,9 +247,22 @@ case SDL_MOUSEBUTTONDOWN:
     {
 case SDL_BUTTON_LEFT:
 PositionEnemy2.x -=50;
+
+if(PositionEnemy2.x<0) 
+{
+  PositionEnemy2.x=0;
+  
+}
 break;
+
 case SDL_BUTTON_RIGHT:
 PositionEnemy2.x +=50;
+
+if(PositionEnemy2.x>1200) 
+{
+  PositionEnemy2.x=1200;
+  
+}
 }
 }
 case SDL_KEYDOWN:
@@ -261,12 +275,27 @@ done = 1;
 break;
 case SDLK_LEFT:
 PositionEnemy2.x -= 15;
+PositionEnemy2.x -=15;
+
+if(PositionEnemy2.x<0) 
+{
+  PositionEnemy2.x=0;
+ 
+}
 break;
 case SDLK_RIGHT:
 PositionEnemy2.x += 15;
+PositionEnemy2.x +=15;
+
+if(PositionEnemy2.x>1200) 
+{
+  PositionEnemy2.x=1200;
+
+}
 break;
 case SDLK_UP:
-PositionEnemy2.y -= 35;
+PositionEnemy2.y -=35;
+PositionEnemy2.x +=35;
 break;
 case SDLK_DOWN:
 PositionEnemy2.y += 15;
@@ -280,8 +309,11 @@ switch(event.key.keysym.sym)
 
 
 case SDLK_UP:
+
 if (PositionEnemy2.y < 220)
 PositionEnemy2.y += 35;
+
+
 break;
 case SDLK_DOWN:
 if (PositionEnemy2.y > 220)
